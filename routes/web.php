@@ -14,3 +14,6 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+$this->get('user/{username}','GitHubController@getUser');
