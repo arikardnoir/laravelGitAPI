@@ -12,8 +12,15 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('github');
 });
 
+Route::get('/home', function () {
+    return view('github');
+});
 
 $this->get('user/{username}','GitHubController@getUser');
+
+$this->get('user','GitHubController@get');
+
+$this->post('users', ['as'=>'post.user','uses'=>'GitHubController@getPostUser']);

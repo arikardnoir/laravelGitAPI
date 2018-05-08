@@ -1,0 +1,45 @@
+
+@media (min-width: 768px) {
+    .container {
+        width: 40%;
+        padding: 30px 100px 20px 100px;
+    }
+
+    .contend {
+        padding: 30px 20px 20px 20px;
+        
+    }
+
+}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) { 
+
+    container {
+        width: 60%;
+        
+    }
+
+    .contend {
+        padding: 30px 20px 20px 20px;
+        
+    }
+
+}
+
+/* Landscape phones and down */
+@media (max-width: 480px) { 
+
+    container {
+        width: 60%;
+        
+    }
+
+    .contend {
+        padding: 30px 20px 20px 20px;
+        
+    }
+
+
+
+ }
