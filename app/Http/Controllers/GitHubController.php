@@ -22,6 +22,31 @@ class GitHubController extends Controller
 
     }
 
+    /*
+    |-------------------------------------------------------
+    | Index Functio
+    |-------------------------------------------------------
+    |
+    | Here you will be bach at homepage of Aplication
+    |
+    */
+    public function index(){
+
+        return view('github');
+
+    }
+
+
+    /*
+    |--------------------------------------------------------------------------
+    | getUser Function
+    |--------------------------------------------------------------------------
+    |
+    | Here you be bringin all datas of user u will send via GET
+    | You will put the on URL
+    |
+    */
+
     public function getUser($username)
     {
 
@@ -37,14 +62,11 @@ class GitHubController extends Controller
     
             ]);
     
-    
             //return $response->getBody();
     
             $user = $response->getBody();
     
                 return view('gitusers', compact('user'));
-
-
 
         }catch(ClientException $e){
 
@@ -59,6 +81,16 @@ class GitHubController extends Controller
 
     }
 
+
+    /*
+    |--------------------------------------------------------------------------
+    | getPostUser Function
+    |--------------------------------------------------------------------------
+    |
+    | Here you be bringin all datas of user u will send via POST
+    | U will send de the user name on input inside in one FORM with method POST
+    |
+    */
     public function getPostUser(Request $request)
     {
 
@@ -79,15 +111,13 @@ class GitHubController extends Controller
                 ],
     
             ]);
-    
-    
+        
             //return $response->getBody();
     
             $user = json_decode($response->getBody());
     
             //dd($user);
                 return view('gitusers', compact('user'));
-
 
         }catch(ClientException $e){
 
@@ -101,31 +131,6 @@ class GitHubController extends Controller
         }
 
     }
-
-
-    public function get()
-    {
-
-        $guzzle = new Guzzle;
-
-        $response = $guzzle->request('GET',env('GITHUB_URL') . "users", [
-
-            'headers' => [
-                'Authorization' => "Bearer {$this->token}",
-            ],
-
-        ]);
-
-
-        return json_decode($response->getBody())->data;
-
-        //$products = json_decode($response->getBody())->data;
-
-        //return view('tests-api.products.index', compact('products', 'title'));
-
-    }
-
-
 
 
 }

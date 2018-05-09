@@ -13,7 +13,7 @@
 </head>
 <body>
 
-    <a href=""><button type="button" class="btn btn-secondary">Back</button></a>
+    <a href="{{ route('site.home') }}"><button type="button" class="btn btn-secondary">Back</button></a>
     <div class="container">
 
             <table class="table table-striped">

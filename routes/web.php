@@ -11,13 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('github');
-});
-
 Route::get('/home', function () {
     return view('github');
 });
+
+Route::get('/', ['as' => 'site.home','uses' => 'GitHubController@index']);
 
 $this->get('user/{username}','GitHubController@getUser');
 
