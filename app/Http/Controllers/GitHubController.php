@@ -18,7 +18,7 @@ class GitHubController extends Controller
 
     public function __construct()
     {
-        $this->token = '182bf904a83102f1f3cdee43a4f4919d33706113';
+        $this->token = 'ae65b5b86009904576d77077cc6ad17c8f61c3b4';
 
     }
 
